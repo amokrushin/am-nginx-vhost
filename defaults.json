@@ -1,0 +1,22 @@
+{
+  "nginx": {
+    "path": {
+      "includes": "/etc/nginx",
+      "available": "/etc/nginx/sites-available",
+      "enabled": "/etc/nginx/sites-enabled"
+    }
+  },
+  "letsencrypt": {
+    "downloadUrl": "https://dl.eff.org/certbot-auto",
+    "path": "/opt/certbot",
+    "webroot": "/var/www/letsencrypt",
+    "log": "/var/log/am-nginx-vhost",
+    "cronTime": "23 */12 * * *",
+    "email": ""
+  },
+  "dns": {
+    "yandex": {
+      "apiKey": ""
+    }
+  }
+}
