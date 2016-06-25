@@ -11,7 +11,7 @@ vorpal
     .command( 'add-vhost-proxy <hostname> <port>' )
     .validate( args => {
         return _.min( [
-            args.hostname.split( '.' ).length === 3,
+            args.hostname.split( '.' ).length > 1,
             /^\d{2,5}$/.test( args.port )
         ] );
     } )
