@@ -1,17 +1,27 @@
 {
   "name": "am-nginx-vhost",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "",
   "license": "MIT",
   "author": "Anton Mokrushin <anton@mokr.org> (mokr.org)",
-  "main": "app.js",
+  "files": [
+    "bin",
+    "lib",
+    "templates",
+    "defaults.json",
+    "index.js"
+  ],
+  "main": "index.js",
+  "bin": {
+    "vhost": "./bin/vhost.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/amokrushin/am-nginx-vhost.git"
   },
   "scripts": {
-    "test": "iamtest",
-    "git-reset": "git reset --hard HEAD && git clean -df && git pull"
+    "git-reset": "git reset --hard HEAD && git clean -df && git pull",
+    "test": "iamtest"
   },
   "dependencies": {
     "fs-extra": "^2.0.0",
