@@ -1,7 +1,7 @@
 const test = require('tape');
 const Nginx = require('../../lib/Nginx');
-const config = require('../../defaults.json');
 
+const { LETSENCRYPT_WEBROOT } = process.env;
 // eslint-disable-next-line
 const logger = console.log;
 const nginx = new Nginx({ logger });
@@ -17,7 +17,7 @@ test('enable vhost', (t) => {
 });
 
 test('add include', (t) => {
-    t.ok(nginx.includeAdd('letsencrypt.conf', { webroot: config.letsencrypt.webroot }));
+    t.ok(nginx.includeAdd('letsencrypt.conf', { webroot: LETSENCRYPT_WEBROOT }));
     t.end();
 });
 
