@@ -7,10 +7,9 @@
     }
   },
   "letsencrypt": {
-    "downloadUrl": "https://dl.eff.org/certbot-auto",
-    "path": "/opt/certbot",
+    "bin": "letsencrypt",
     "webroot": "/var/www/letsencrypt",
-    "log": "/var/log/am-nginx-vhost",
+    "log": "./letsencrypt.log",
     "cronTime": "23 */12 * * *",
     "email": ""
   },
@@ -18,5 +17,6 @@
     "yandex": {
       "apiKey": ""
     }
-  }
+  },
+  "sudo": true
 }

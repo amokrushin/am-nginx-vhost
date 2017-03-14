@@ -1,41 +1,44 @@
 # am-nginx-vhost
+[![NPM Stable Version][npm-stable-version-image]][npm-url]
+[![Build Status][travis-master-image]][travis-url]
+[![Test Coverage][codecov-image]][codecov-url-master]
+[![Dependency Status][david-image]][david-url-master]
+[![Node.js Version][node-version-image]][node-version-url]
+[![License][license-image]][license-url]
 
 ## Install
-    git clone https://github.com/amokrushin/am-nginx-vhost.git
-    cd am-nginx-vhost
-    npm i
+    npm i am-nginx-vhost -g
 
-## Run
-    node app.js
+## Usage
 
-## CLI
-###
-    local@io~$ help
-    Commands:
-      help [command...]                  Provides help for a given command.
-      exit                               Exits application.
-      add-vhost-proxy <hostname> <port>
-      letsencrypt
+```bash
+vhost <cmd> [args]
 
-###
-    local@io~$ letsencrypt
-      letsencrypt install
-      letsencrypt write letsencrypt.conf to /etc/nginx ok
-      letsencrypt ensure dir /var/www/letsencrypt ok
-      letsencrypt certbot download to /opt/certbot ok
-      letsencrypt make /opt/certbot/certbot-auto executable ok
-      letsencrypt renew script write to /srv/node_projects/am-nginx-vhost/lib/renew.sh ok
-      letsencrypt make /srv/node_projects/am-nginx-vhost/lib/renew.sh executable ok
-      letsencrypt cronjob added "23 */12 * * * /srv/node_projects/am-nginx-vhost/lib/renew.sh" ok
+Commands:
+  init    init
+  add     add vhost [host] [port]
+  remove  remove vhost [host]
 
-### 
-    local@io~$ add-vhost-proxy test.example.com 3061
-      Cloudflare DNS support is not implemented
-      nginx vhost config write to /etc/nginx/sites-available/test.example.com ok
-      nginx ensure symlink /etc/nginx/sites-enabled/test.example.com ok
-      nginx reload ok
-      letsencrypt write letsencrypt.conf to /etc/nginx ok
-      letsencrypt ensure dir /var/www/letsencrypt ok
-      letsencrypt execute /opt/certbot/certbot-auto ok
-      nginx vhost config write to /etc/nginx/sites-available/test.example.com ok
-      nginx reload ok
+Options:
+  --help  Show help
+
+Example:
+  vhost --help
+  sudo vhost init
+  sudo vhost add -h test.example.org -p 1234
+  sudo vhost remove -h test.example.org
+```
+
+
+[npm-stable-version-image]: https://img.shields.io/npm/v/am-nginx-vhost.svg
+[npm-url]: https://npmjs.com/package/am-nginx-vhost
+[travis-master-image]: https://img.shields.io/travis/amokrushin/am-nginx-vhost/master.svg
+[travis-url]: https://travis-ci.org/amokrushin/am-nginx-vhost
+[codecov-image]: https://img.shields.io/codecov/c/github/amokrushin/am-nginx-vhost/master.svg
+[codecov-url-master]: https://codecov.io/github/amokrushin/am-nginx-vhost?branch=master
+[david-image]: https://img.shields.io/david/amokrushin/am-nginx-vhost.svg
+[david-url-master]: https://david-dm.org/amokrushin/am-nginx-vhost
+[node-version-image]: https://img.shields.io/node/v/am-nginx-vhost.svg
+[node-version-url]: https://nodejs.org/en/download/
+[license-image]: https://img.shields.io/npm/l/am-nginx-vhost.svg
+[license-url]: https://raw.githubusercontent.com/amokrushin/am-nginx-vhost/master/LICENSE.txt
