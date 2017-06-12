@@ -29,6 +29,44 @@ Example:
   sudo vhost remove -h test.example.org
 ```
 
+## Example
+
+```
+am@135775:~$ sudo vhost add -h blog.mokr.org -p 2368
+dns mokr.org nameservers: dns2.yandex.ru dns1.yandex.ru
+dns blog.mokr.org public IP: 85.143.221.54
+dns mokr.org A record blog 85.143.221.54 added
+nginx vhost blog.mokr.org config written to /etc/nginx/sites-available/blog.mokr.org
+nginx vhost blog.mokr.org enabled /etc/nginx/sites-enabled/blog.mokr.org
+nginx test: ok
+nginx reload: ok
+letsencrypt ensure dir /var/www/letsencrypt
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Obtaining a new certificate
+Performing the following challenges:
+http-01 challenge for blog.mokr.org
+Using the webroot path /var/www/letsencrypt for all unmatched domains.
+Waiting for verification...
+Cleaning up challenges
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at
+   /etc/letsencrypt/live/blog.mokr.org/fullchain.pem. Your cert will
+   expire on 2017-09-10. To obtain a new or tweaked version of this
+   certificate in the future, simply run certbot again. To
+   non-interactively renew *all* of your certificates, run "certbot
+   renew"
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+
+letsencrypt blog.mokr.org certificate created
+nginx vhost blog.mokr.org config written to /etc/nginx/sites-available/blog.mokr.org
+nginx test: ok
+nginx reload: ok
+
+```
+
 
 [npm-stable-version-image]: https://img.shields.io/npm/v/am-nginx-vhost.svg
 [npm-url]: https://npmjs.com/package/am-nginx-vhost
